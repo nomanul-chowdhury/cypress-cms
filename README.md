@@ -19,22 +19,11 @@ Installing cypress to run is a matter of running `npm ci`. This requires that yo
 ## Running tests
 
 ### Local host test
-
-To run the tests locally you can use the prepackaged script `npm run cypress-run`.
-
-To run the tests using the UI you can use the prepackaged script `npm run cypress-open`.
-
-### Remote host test
-
-To run the test against a remote host you need to run the following command. The permission part can be removed
-
-if the host doesn't require them.
+Use following command to run the cypress test
 
 ```bash
 
 $ npx cypress open --config baseUrl=https://www.nsw.gov.au/
-
-```
 
 ```
 

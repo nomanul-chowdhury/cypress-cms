@@ -5,7 +5,7 @@ When("I type keyword {string} in the search by address field", (keyword) => {
 
 When("I click item {string} from auto suggession", (keyword) => {
   //cy.get("#header-search-autosuggest-list li").eq(0).click();
-  cy.get('#header-search-autosuggest-list li').contains(`${keyword}`).click()
+  cy.get('div.pac-item').contains(`${keyword}`).eq(0).click()
 });
 
 When("I click search button", () => {

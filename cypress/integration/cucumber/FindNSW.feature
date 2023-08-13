@@ -6,14 +6,15 @@ Feature: Find Place in NSW
       When I type keyword "Haymarket" in the search by address field
       And I click item "Haymarket NSW, Australia" from auto suggession
       And I click search button
-      Then I should see result pin icon "public-facility.svg" in map
-      And I should see result pin icon "event.svg" in map
-      And I should see result pin icon "open-space.svg" in map
-      And I should see result pin icon "point-of-interest.svg" in map
+      Then I should see result pin icon "public-facility" in map
+      And I should see result pin icon "event" in map
+      And I should see result pin icon "open-space" in map
+      And I should see result pin icon "point-of-interest" in map
+      And I should see result pin icon "walk" in map
       When I only check open space
       And I click filter button
-      Then I should see result pin icon "open-space.svg" in map
-      And I should not see result pin icon "event.svg" in map
-      And I should not see result pin icon "point-of-interest.svg" in map
-      And I should not see result pin icon "public-facility.svg" in map
-      And I should not see result pin icon "walk.svg" in map
+      Then I should see result pin icon "open-space" in map
+      And I should not see result pin icon "event" in map
+      And I should not see result pin icon "point-of-interest" in map
+      And I should not see result pin icon "public-facility" in map
+      And I should not see result pin icon "walk" in map

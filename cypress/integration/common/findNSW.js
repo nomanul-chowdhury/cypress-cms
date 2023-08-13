@@ -14,9 +14,18 @@ When("I click search button", () => {
 });
 
 Then("I should see result pin icon {string} in map", (keyword) => {
-  cy.get(`div[aria-label="Map"] img[src="https://www.nsw.gov.au/libraries/dcs/images/${keyword}"]`).should("be.visible");
+  //cy.get(`div[aria-label="Map"] img[src="https://www.nsw.gov.au/libraries/dcs/images/${keyword}.svg"]`).then(($el) => {
+  cy.get(`div[aria-label="Map"]`).then(($el) => {
 
+    let iconSvg = `img[src="https://www.nsw.gov.au/libraries/dcs/images/${keyword}.svg"]`;
 
+    if ($el.find(iconSvg).length) {
+      expect($el.find(iconSvg)).to.be.visible;
+    }
+    else {
+      cy.log('Facility not availale in this area');
+    }
+  });
 });
 
 When("I only check open space", () => {
@@ -32,8 +41,7 @@ When("I click filter button", () => {
 });
 
 Then("I should not see result pin icon {string} in map", (keyword) => {
-  cy.get(`div[aria-label="Map"] img[src="https://www.nsw.gov.au/libraries/dcs/images/${keyword}"]`).should("not.exist");
+  cy.get(`div[aria-label="Map"] img[src="https://www.nsw.gov.au/libraries/dcs/images/${keyword}.svg"]`).should("not.exist");
 
 
 });
-

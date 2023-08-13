@@ -43,5 +43,14 @@ When("I click filter button", () => {
 Then("I should not see result pin icon {string} in map", (keyword) => {
   cy.get(`div[aria-label="Map"] img[src="https://www.nsw.gov.au/libraries/dcs/images/${keyword}.svg"]`).should("not.exist");
 
+});
+
+When("I click result pin icon in map", () => {
+  cy.get(`.dcs-public-spaces__map--results img[src="https://maps.gstatic.com/mapfiles/transparent.png"]`).eq(0).click();
+
+});
+
+Then("I should see info on the pop up for {string}", (keyword) => {
+  cy.get(`.dcs-public-spaces__marker-type`).should("have.text", `${keyword}`);
 
 });

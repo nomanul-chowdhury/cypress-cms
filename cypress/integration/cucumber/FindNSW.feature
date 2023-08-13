@@ -18,3 +18,5 @@ Feature: Find Place in NSW
       And I should not see result pin icon "point-of-interest" in map
       And I should not see result pin icon "public-facility" in map
       And I should not see result pin icon "walk" in map
+      When I click result pin icon in map
+      Then I should see info on the pop up for "Open Space"
